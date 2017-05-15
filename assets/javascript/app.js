@@ -39,7 +39,7 @@ var gifTastic = {
     apiPull: function(searchWord) {
         let apiKey = "dc6zaTOxFJmzC";
         let topic = searchWord;
-        let queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + apiKey + "&limit=10";
+        let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + apiKey + "&limit=10";
 
         $.ajax({
             url: queryURL,
