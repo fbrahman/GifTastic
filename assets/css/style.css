@@ -1,0 +1,43 @@
+html {
+    height: 100%;
+}
+
+body {
+    /*flexbox for overall page children include header mainsection footer*/
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.17em;
+}
+
+h4 {
+    font-size: 1.12em;
+}
+
+h5 {
+    font-size: .83em;
+}
+
+h6 {
+    font-size: .75em;
+}
+
+.mainSection {
+    /*allows the main section to take up all available space pushing footer to the bottom*/
+    flex: 1;
+}
+#copyright {
+    text-align: center;
+    padding: .5% 0 .5% 0;
+}

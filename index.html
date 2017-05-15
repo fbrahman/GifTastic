@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GifTastic</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="title"></h1>
+    </header>
+    <section class="mainSection">
+        <div id="buttonNav">
+            <!-- populated by jQuery -->
+        </div>
+        <div id="mainBody">
+            <div id="picDisplay">
+                <!-- populated by jQuery -->
+            </div>
+            <form id="inputForm">
+                <label for="newInput">Add a new button</label>
+                <input type="text" id="newInput">
+                <input type="submit" value="buttonName" class="button inputButton">
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div id="copyright">
+            &#169; Copyright 2017 Fahad Rahman
+        </div>
+    </footer>
+    <!-- jQuery and JavaScript links -->
+    <script>
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javaScript/app.js"></script>
+</body>
+
+</html>
