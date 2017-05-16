@@ -1,3 +1,8 @@
+@font-face {
+    font-family: adam;
+    src: url(../fonts/ADAM.otf);
+}
+
 html {
     height: 100%;
 }
@@ -6,7 +11,10 @@ body {
     /*flexbox for overall page children include header mainsection footer*/
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100vh;
+    max-height: 100%;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: .25em;
 }
 
 h1 {
@@ -33,10 +41,180 @@ h6 {
     font-size: .75em;
 }
 
+.element {
+    border-style: solid;
+    border-color: yellow;
+    border-width: 1px;
+}
+
 .mainSection {
     /*allows the main section to take up all available space pushing footer to the bottom*/
     flex: 1;
+    display: flex;
 }
+
+#buttonNav {
+    margin: 1.5%;
+    flex: 1;
+    max-width: 10%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1%;
+}
+
+.button {
+    font-family: 'Raleway', sans-serif;
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+    padding: 1% 2%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin: 8%;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+}
+
+.button:hover {
+    background-color: #008CBA;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.buttonCreator:focus {
+    background-color: #008CBA;
+    color: white;
+}
+
+.activeButton {
+    background-color: #008CBA;
+    color: white;
+}
+
+.btnClr{
+    border-color: red;
+}
+
+.btnClr:hover {
+    background-color: red;
+    color: white;
+}
+
+#mainBody {
+    flex: 2;
+    display: flex;
+    margin: 1.5%;
+}
+
+#picDisplay {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    flex: 2;
+    overflow: auto;
+}
+
+.gifImg {
+    margin: 1.5%;
+}
+
+.ratingText {
+    font-size: 1.5em;
+    padding: 1.5%;
+    word-wrap: nowrap;
+}
+
+.gif {
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+}
+
+#sideBar {
+    flex: 1;
+    margin: 1.5%;
+    max-width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+#inputForm {
+    flex: 1;
+    margin-top: 5%;
+}
+
+    #labelInput {
+        font-size: 1.5em;
+        margin: 0 0 0 5%;
+    }
+
+    #newInput {
+        font-size: 1.5em;
+        margin: 5%;
+        border-radius: 5px;
+        width: 90%;
+    }
+
+    .inputButton {
+        margin: 0 5% 5% 5%;
+    }
+
+#statistics{
+    flex:1;
+}
+
+    #statisticsHeader{
+        font-size: 1.5em;
+        padding:3% 0 0 5%;
+        font-weight: bold;
+    }
+
+    .statisticsText{
+        padding: 5%;
+        line-height: 1.5em;
+    }
+
+#settings{
+    flex: .5;
+    display: flex;
+    flex-direction: column;
+}
+    
+    #settingsHeader{
+        font-size: 1.5em;
+        padding:3% 0 0 5%;
+        font-weight: bold;
+    }
+
+    #settingsText{
+     padding: 5% 5% 0 5%;
+     line-height: 1.5em;   
+    }
+
+    #buttonDispSize{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5% 0 5%;
+    }
+
+    #buttonDispSize button{
+        flex: 1;
+        margin: 0 0 0 0;
+        border-radius: 0;
+        padding: 2%;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
 #copyright {
     text-align: center;
     padding: .5% 0 .5% 0;

@@ -5,28 +5,47 @@
     <title>GifTastic</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300|Raleway" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <h1 id="title"></h1>
     </header>
-    <section class="mainSection">
-        <div id="buttonNav">
+    <section class="mainSection element">
+        <div id="buttonNav" class="element">
             <!-- populated by jQuery -->
         </div>
-        <div id="mainBody">
-            <div id="picDisplay">
+        <div id="mainBody" class="element">
+            <div id="picDisplay" class="element">
                 <!-- populated by jQuery -->
             </div>
-            <form id="inputForm">
-                <label for="newInput">Add a new button</label>
-                <input type="text" id="newInput">
-                <input type="submit" value="buttonName" class="button inputButton">
-            </form>
         </div>
+        <aside id="sideBar" class="element">
+            <form id="inputForm" class="element">
+                <label for="newInput" id="labelInput">Add a new button</label>
+                <input type="text" id="newInput">
+                <input type="submit" value="Submit" class="button inputButton">
+            </form>
+            <div id="statistics" class="element">
+                <p id="statisticsHeader">
+                    Statistics
+                </p>
+            </div>
+            <div id="settings" class="element">
+                <p id="settingsHeader">
+                    Settings
+                </p>
+                <p id="settingsText"> Select the number of results to display on the page</p>
+                <div id="buttonDispSize">
+                    <button class="button btnDispSize activeButton">10</button>
+                    <button class="button btnDispSize">25</button>
+                    <button class="button btnDispSize">50</button>
+                </div>
+            </div>
+        </aside>
     </section>
-    <footer>
+    <footer class="element">
         <div id="copyright">
             &#169; Copyright 2017 Fahad Rahman
         </div>
