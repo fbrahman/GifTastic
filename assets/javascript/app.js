@@ -36,6 +36,7 @@ var gifTastic = {
                 //changes the styling of the button to show what was selected
                 gifTastic.buttonActiveSwitch(this);
                 $("#picDisplay").data("topic", $(this).text());
+                $("#picDisplay").data("offset", 0);
                 //if the form submit button was clicked then pass text field value to the array extender function.
             } else if ($(this).hasClass("inputButton")) {
                 //prevent default functionality of form
@@ -61,9 +62,13 @@ var gifTastic = {
                 //changes the styling of the button to show what was selected
                 gifTastic.buttonActiveSwitch(this);
                 $("#picDisplay").data("dispSize", ($(this).text()))
-                    //catch all scenario for the any button press that don't fall in the above scenarios
+                $("#picDisplay").data("offset", 0);
+                   
             } else if ($(this).hasClass("btnClr")) {
                 gifTastic.initialize();
+            } else if($(this).hasClass("nxtPage")){
+                gifTastic.nxtPage();            
+            //catch all scenario for the any button press that don't fall in the above scenarios
             } else {
                 //log the text value of the btton clicked
                 console.log($(this).text());
@@ -90,8 +95,8 @@ var gifTastic = {
             method: "GET"
         }).done(
             function(response) {
-                console.log(queryURL);
-                console.log(response);
+                // console.log(queryURL);
+                // console.log(response);
                 gifTastic.imgLayout(response);
                 gifTastic.statisticsLayout(response, topic);
             }
@@ -123,7 +128,7 @@ var gifTastic = {
 
             $("#picDisplay").append(gifContainer);
         })
-        this.clickListener();
+        // this.clickListener();
     },
 
     imgSwitch: function(img) {
@@ -159,34 +164,45 @@ var gifTastic = {
         let totalPages = Math.ceil(total_count / dispSize);
         let currPage = (offset / dispSize) + 1;
 
-
-        console.log(totalPages, currPage);
+        // console.log(totalPages, currPage);
 
         $(".statisticsText").remove();
+        $(".nxtPage").remove();
 
         $("#statistics").append($("<p>", { "class": "statisticsText", text: "There are " + total_count + " available " + topic + " gifs." }));
-
         $("#statistics").append($("<p>", { "class": "statisticsText", text: "Page: " + currPage + " of " + totalPages }));
+        $("#statistics").append($("<button>", {"class":"button nxtPage", text:"Next Page"}));
+
+        this.clickListener();
     },
 
-    nxtPage: function(objArray){
-        let statisticsObj = objArray.pagination;
-        let offset = statisticsObj.offset;
-        let count = statisticsObj.count;
+    nxtPage: function(){
+        let offset = $("#picDisplay").data("offset");
+        let count = parseInt($("#picDisplay").data("dispSize"));
+        let topic = $("#picDisplay").data("topic");
 
-        offset += count;
-        console.log(offset);
+        // console.log(offset,count);
+        offset = offset + count;
 
+        $("#picDisplay").data("offset",offset);
+
+        this.apiPull(topic, count, offset);
+        // console.log(offset);
     },
 
     initialize: function() {
 
         $(".buttonCreator").remove();
-        $("#picDisplay").empty().data("topic", "");
+        $("#picDisplay").empty().removeData(["topic","offset"]);
+
+        if($("#picDisplay").data("dispSize")==undefined){
+            // console.log(true);
+            $("#picDisplay").data("dispSize",10);
+        }
+
         $(".statisticsText").remove();
-
-        console.log($("#picDisplay").data());
-
+        $(".nxtPage").remove();
+        // console.log($("#picDisplay").data());
         this.buttonCreator();
         this.clickListener();
     }
