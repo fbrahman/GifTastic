@@ -75,7 +75,7 @@ h6 {
     padding: 1% 2%;
     text-align: center;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.25em;
     margin: 8%;
     -webkit-transition-duration: 0.4s;
     /* Safari */
@@ -132,7 +132,7 @@ h6 {
 }
 
 .ratingText {
-    font-size: 1.5em;
+    font-size: 1.25em;
     padding: 1.5%;
     word-wrap: nowrap;
 }
@@ -157,7 +157,7 @@ h6 {
 }
 
     #labelInput {
-        font-size: 1.5em;
+        font-size: 1.25em;
         margin: 0 0 0 5%;
         font-weight: bold;
     }
@@ -178,18 +178,20 @@ h6 {
 }
 
     #statisticsHeader{
-        font-size: 1.5em;
+        font-size: 1.25em;
         padding:3% 0 0 5%;
         font-weight: bold;
     }
 
     .statisticsText{
-        padding: 5%;
+        padding: 5% 5% 2% 5%;
+        font-size: 1em;
         line-height: 1.5em;
     }
 
     .pageNav{
         display: flex;
+        font-size: 1em;
         flex-direction: row-reverse;
         justify-content: flex-end;
        
@@ -201,20 +203,21 @@ h6 {
     }
 
 #settings{
-    flex: .5;
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
     
     #settingsHeader{
-        font-size: 1.5em;
+        font-size: 1.25em;
         padding:3% 0 0 5%;
         font-weight: bold;
     }
 
     #settingsText{
-     padding: 5% 5% 0 5%;
-     line-height: 1.5em;   
+     padding: 5% 5% 2% 5%;
+     line-height: 1.5em;
+     font-size: 1em;   
     }
 
     #buttonDispSize{
@@ -222,7 +225,7 @@ h6 {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 5% 0 5%;
+        margin: 0 5% 3% 5%;
     }
 
     #buttonDispSize button{
@@ -230,7 +233,7 @@ h6 {
         margin: 0 0 0 0;
         border-radius: 0;
         padding: 2%;
-        font-size: 1.5em;
+        font-size: 1.25em;
         font-weight: bold;
     }
 
