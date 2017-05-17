@@ -3,7 +3,7 @@ $("#buttonNav").append($("<button>", { text: "clear", "class": "button btnClr" }
 var gifTastic = {
 
     //starting array with default words
-    topicArray: ["cat", "dog", "car"],
+    topicArray: ["United States", "Mexico", "France"],
 
     //creates buttons from topic array. Buttons are removed and recreated each time function is called. Any buttons created by the function will have the "buttonCreator" class.
     buttonCreator: function() {
@@ -66,8 +66,10 @@ var gifTastic = {
                    
             } else if ($(this).hasClass("btnClr")) {
                 gifTastic.initialize();
-            } else if($(this).hasClass("nxtPage")){
-                gifTastic.nxtPage();            
+            } else if($(this).hasClass("nxtPageBtn")){
+                gifTastic.nxtPage();
+            } else if($(this).hasClass("prvPageBtn")){
+                gifTastic.prvPage();             
             //catch all scenario for the any button press that don't fall in the above scenarios
             } else {
                 //log the text value of the btton clicked
@@ -104,7 +106,6 @@ var gifTastic = {
     },
 
     imgLayout: function(objArray) {
-
         $("#picDisplay").empty();
 
         $.each(objArray.data, function(index, val) {
@@ -167,11 +168,13 @@ var gifTastic = {
         // console.log(totalPages, currPage);
 
         $(".statisticsText").remove();
-        $(".nxtPage").remove();
+        $(".pageNav").remove();
 
         $("#statistics").append($("<p>", { "class": "statisticsText", text: "There are " + total_count + " available " + topic + " gifs." }));
         $("#statistics").append($("<p>", { "class": "statisticsText", text: "Page: " + currPage + " of " + totalPages }));
-        $("#statistics").append($("<button>", {"class":"button nxtPage", text:"Next Page"}));
+        $("#statistics").append($("<div>",{"class":"pageNav"})
+                .append($("<button>", {"class":"button nxtPageBtn", text:"Next"}))
+                .append($("<button>", {"class":"button prvPageBtn", text:"Previous"})));
 
         this.clickListener();
     },
@@ -182,7 +185,25 @@ var gifTastic = {
         let topic = $("#picDisplay").data("topic");
 
         // console.log(offset,count);
-        offset = offset + count;
+        offset += count;
+
+        $("#picDisplay").data("offset",offset);
+
+        this.apiPull(topic, count, offset);
+        // console.log(offset);
+    },
+
+    prvPage: function(){
+        let offset = $("#picDisplay").data("offset");
+        let count = parseInt($("#picDisplay").data("dispSize"));
+        let topic = $("#picDisplay").data("topic");
+
+        // console.log(offset,count);
+        if (offset === 0) {
+            return;
+        } else {
+            (offset -= count);
+        };
 
         $("#picDisplay").data("offset",offset);
 
@@ -191,7 +212,6 @@ var gifTastic = {
     },
 
     initialize: function() {
-
         $(".buttonCreator").remove();
         $("#picDisplay").empty().removeData(["topic","offset"]);
 
@@ -201,7 +221,7 @@ var gifTastic = {
         }
 
         $(".statisticsText").remove();
-        $(".nxtPage").remove();
+        $(".pageNav").empty();
         // console.log($("#picDisplay").data());
         this.buttonCreator();
         this.clickListener();
