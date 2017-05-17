@@ -43,8 +43,13 @@ h6 {
 
 .element {
     border-style: solid;
-    border-color: yellow;
+    border-color: #008CBA;
     border-width: 1px;
+}
+
+#title{
+    font-size: 3em;
+    margin: 1%;
 }
 
 .mainSection {
@@ -123,6 +128,7 @@ h6 {
 
 .gifImg {
     margin: 1.5%;
+    text-align: center;
 }
 
 .ratingText {
@@ -133,7 +139,7 @@ h6 {
 
 .gif {
     height: 200px;
-    width: 200px;
+    /*width: 200px;*/
     cursor: pointer;
 }
 
@@ -147,12 +153,13 @@ h6 {
 
 #inputForm {
     flex: 1;
-    margin-top: 5%;
+    padding-top: 5%;
 }
 
     #labelInput {
         font-size: 1.5em;
         margin: 0 0 0 5%;
+        font-weight: bold;
     }
 
     #newInput {
