@@ -3,7 +3,7 @@ $("#buttonNav").append($("<button>", { text: "clear", "class": "button btnClr" }
 var gifTastic = {
 
     //starting array with default words
-    topicArray: ["chili pepper", "bell pepper", "jalapeno"],
+    topicArray: ["chili pepper", "ghost pepper", "jalapeno"],
 
     //creates buttons from topic array. Buttons are removed and recreated each time function is called. Any buttons created by the function will have the "buttonCreator" class.
     buttonCreator: function() {
@@ -56,7 +56,7 @@ var gifTastic = {
             } else if ($(this).hasClass("btnDispSize")) {
                 //passing the text value of the button as the second parameter for the api pull function
                 let topic = $("#picDisplay").data("topic");
-                if (topic !== "") {
+                if (topic) {
                     gifTastic.apiPull(topic, ($(this).text()));
                 }
                 //changes the styling of the button to show what was selected
