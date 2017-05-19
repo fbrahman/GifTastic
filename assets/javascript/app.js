@@ -3,7 +3,7 @@ $("#buttonNav").append($("<button>", { text: "clear", "class": "button btnClr" }
 var gifTastic = {
 
     //starting array with default words
-    topicArray: ["united states", "mexico", "france"],
+    topicArray: ["chili pepper", "bell pepper", "jalapeno"],
 
     //creates buttons from topic array. Buttons are removed and recreated each time function is called. Any buttons created by the function will have the "buttonCreator" class.
     buttonCreator: function() {

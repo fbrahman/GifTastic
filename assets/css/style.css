@@ -43,13 +43,22 @@ h6 {
 
 .element {
     border-style: solid;
-    border-color: #008CBA;
+    border-color: #ff4300;
     border-width: 1px;
 }
 
 #title{
     font-size: 3em;
     margin: 1%;
+}
+
+header h1 span {
+
+}
+
+#caliente{
+    vertical-align: bottom;
+    margin: 0 0 -.3em 0;
 }
 
 .mainSection {
@@ -71,7 +80,7 @@ h6 {
     font-family: 'Raleway', sans-serif;
     background-color: white;
     color: black;
-    border: 2px solid #008CBA;
+    border: 2px solid #ff4300;
     padding: 1% 2%;
     text-align: center;
     text-decoration: none;
@@ -86,27 +95,27 @@ h6 {
 }
 
 .button:hover {
-    background-color: #008CBA;
+    background-color: #ff4300;
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .buttonCreator:focus {
-    background-color: #008CBA;
+    background-color: #ff4300;
     color: white;
 }
 
 .activeButton {
-    background-color: #008CBA;
+    background-color: #ff4300;
     color: white;
 }
 
 .btnClr{
-    border-color: red;
+    border-color: #9be1fb;
 }
 
 .btnClr:hover {
-    background-color: red;
+    background-color: #9be1fb;
     color: white;
 }
 
@@ -239,5 +248,6 @@ h6 {
 
 #copyright {
     text-align: center;
+    font-size: .75em;
     padding: .5% 0 .5% 0;
 }
